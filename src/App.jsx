@@ -6,7 +6,7 @@ import SingleCandlesChart from './components/SingleCandlesChart'
 
 function App() {
   return (
-    <div className="bg-gray-50 p-4 min-h-screen flex flex-col gap-3 md:grid md:grid-cols-3 md:grid-rows-2">
+    <div className="bg-gray-50 p-4 min-h-screen flex flex-col gap-3 md:p-6 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-6 md:items-start">
       <Card className='md:col-span-2'>
         <MultiCandlesChart />
       </Card>

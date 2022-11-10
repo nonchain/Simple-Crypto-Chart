@@ -19,7 +19,7 @@ function SingleCandlesChart() {
 
     return volumeArray.pop();
   }
-  
+
   const unixTimeFormate = (time) => {
     const unix = new Date(time * 1000);
     return unix.toLocaleString('en-US', {hour: 'numeric'});
@@ -45,7 +45,7 @@ function SingleCandlesChart() {
         slidesPerView={1}>
         {
           Data.map(item => (
-            <SwiperSlide key={item.time} className='cursor-pointer h-72'>
+            <SwiperSlide key={item.time} className='cursor-pointer h-72 md:h-80'>
               <div className='w-full h-full flex flex-col items-center relative'>
                 <h2 className='mb-4 text-gray-800 text-xl font-semibold'>{unixTimeFormate(item.time)}</h2>
                 <div className="w-full h-full relative">
