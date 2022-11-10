@@ -1,14 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllCandlesState } from '../features/multiCandlesChartSlice';
-import { selectAllVolumeRange } from '../features/singleCandleChartSlice';
 import Checkbox from './Checkbox';
 import VolumeRange from './VolumeRange';
 
 function CandlesFilter() {
    const candlesState = useSelector(selectAllCandlesState);
-   const volumeRange = useSelector(selectAllVolumeRange);
-   console.log(volumeRange);
 
    return (
       <div className='flex flex-col gap-5'>
@@ -24,7 +21,7 @@ function CandlesFilter() {
             </div>
          </div>
 
-         <VolumeRange range={volumeRange}/>
+         <VolumeRange />
       </div>
    )
 }
