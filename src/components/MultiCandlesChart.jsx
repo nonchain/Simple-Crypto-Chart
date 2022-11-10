@@ -12,10 +12,10 @@ function MultiCandlesChart() {
    const convertedData = [];
 
    const unixTimeFormate = (time) => {
-      const unix = new Date();
-      unix.setSeconds(time);
-      return unix.getHours();
-   }
+      const unix = new Date(time * 1000);
+      console.log(unix);
+      return unix.toLocaleString('en-US', {hour: 'numeric'});
+    }
 
    const convertDataHandler = (data) => {
       data?.map(item => {

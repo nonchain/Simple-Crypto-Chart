@@ -21,9 +21,9 @@ function SingleCandlesChart() {
   }
 
   const unixTimeFormate = (time) => {
-    const unix = new Date();
-    unix.setSeconds(time);
-    return unix.getHours();
+    const unix = new Date(time * 1000);
+    console.log(unix);
+    return unix.toLocaleString('en-US', {hour: 'numeric'});
   }
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function SingleCandlesChart() {
           Data.map(item => (
             <SwiperSlide key={item.time} className='cursor-pointer h-72'>
               <div className='w-full h-full flex flex-col items-center relative'>
-                <h2 className='mb-4 text-gray-800 text-xl font-semibold'>Time: {unixTimeFormate(item.time)}</h2>
+                <h2 className='mb-4 text-gray-800 text-xl font-semibold'>{unixTimeFormate(item.time)}</h2>
                 <div className="w-full h-full relative">
                   <ResponsiveContainer width="95%" height="86%">
                     <BarChart
