@@ -7,7 +7,6 @@ import Loading from './Loading';
 
 function MultiCandlesChart() {
    const candlesState = useSelector(selectAllCandlesState);
-   console.log(candlesState)
 
    const [data, setData] = useState([]);
    const [isLoaded, setIsLoaded] = useState(false);
