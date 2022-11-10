@@ -1,21 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-   {id: 'max', value: '', color: '#df4242'},
-   {id: 'min', value: '', color: '#2867e1'},
-]
+const initialState = []
 
 const singleCandlesSlice = createSlice({
    name: 'singleCandles',
    initialState,
    reducers: {
       setVolumeRange(state, actions){
-         const { id, status } = actions.payload;
-         state.forEach( item => {
-            if(item.id === id) {
-               item.isShow = status;
-            }
-         })
+         state.push(actions.payload);
       }
    }
 })
