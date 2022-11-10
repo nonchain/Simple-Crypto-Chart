@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper";
 import { BarChart, Bar, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { useDispatch } from 'react-redux';
+import { setVolumeRange } from '../features/singleCandleChartSlice';
 import Loading from './Loading';
 import SingleCandle from './SingleCandle';
 
@@ -9,6 +11,7 @@ import 'swiper/css';
 import "swiper/css/pagination";
 
 function SingleCandlesChart() {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const { Data } = data;
@@ -18,6 +21,13 @@ function SingleCandlesChart() {
     volumeArray.sort((a, b) => a - b);
 
     return volumeArray.pop();
+  }
+
+  const findMinVolume = (data) => {
+    const volumeArray = data?.map(item => item.volume);
+    volumeArray.sort((a, b) => a - b);
+
+    return volumeArray.shift();
   }
 
   const unixTimeFormate = (time) => {
@@ -30,7 +40,12 @@ function SingleCandlesChart() {
       .then((response) => response.json())
       .then((result) => {
         setIsLoaded(true);
-        setData(result)
+        setData(result);
+        dispatch(setVolumeRange([
+          {id: 'min', value: findMinVolume(Data), color: '#df4242'},
+          {id: 'max', value: findMaxVolume(Data), color: '#2867e1'},
+        ]))
+
       });
   }, []);
 
