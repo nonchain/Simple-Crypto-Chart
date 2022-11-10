@@ -22,7 +22,6 @@ function SingleCandlesChart() {
 
   const unixTimeFormate = (time) => {
     const unix = new Date(time * 1000);
-    console.log(unix);
     return unix.toLocaleString('en-US', {hour: 'numeric'});
   }
 
