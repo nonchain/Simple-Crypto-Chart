@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useSelector } from 'react-redux';
+import { selectAllCandlesState } from '../features/multiCandlesChartSlice';
 import Loading from './Loading';
 
-
-
 function MultiCandlesChart() {
+   const candlesState = useSelector(selectAllCandlesState);
+   console.log(candlesState)
+
    const [data, setData] = useState([]);
    const [isLoaded, setIsLoaded] = useState(false);
    const { Data } = data;
@@ -13,7 +16,6 @@ function MultiCandlesChart() {
 
    const unixTimeFormate = (time) => {
       const unix = new Date(time * 1000);
-      console.log(unix);
       return unix.toLocaleString('en-US', {hour: 'numeric'});
     }
 
@@ -55,9 +57,11 @@ function MultiCandlesChart() {
                <YAxis />
                <Tooltip />
                <Legend />
-               <Bar dataKey="high" fill="#06cc8d" />
-               <Bar dataKey="avg" fill="#ece11c" />
-               <Bar dataKey="low" fill="#fa3628" />
+               {
+                  candlesState.map(item => (
+                     item.isShow && <Bar key={item.id} dataKey={item.id} fill={item.color} />
+                  ))
+               }
             </BarChart>
          </ResponsiveContainer>
       </div>
