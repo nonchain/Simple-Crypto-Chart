@@ -13,16 +13,16 @@ A simple project for fetching and showing the latest **BTC** prices
 
 💢 Show Maximum & Minimum volume reange of **BTC** to User
 
-## State management:
+## ⚡State management:
 **ReduxToolkit**
 
-## Design:
+## ✒Design:
 **Tailwind CSS** 
 
-## Icons:
+## 💡Icons:
 **Remix-icon**
 
-## Showing Charts:
+## 📈Showing Charts:
 **Rechart js**
 
 
