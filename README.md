@@ -17,7 +17,7 @@ A simple project for fetching and showing the latest **BTC** prices
 **ReduxToolkit**
 
 ## Design:
-**Tailwind CSS 
+**Tailwind CSS** 
 
 ## Icons:
 **Remix-icon**
