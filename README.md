@@ -1,11 +1,15 @@
 # Simple-Crypto-Chart
-A simple project for fetch and show the latest *BTC** prices
 
-💢 User could see the hourly lower, average and higher price of bitcoin during 10 hours ago
+A simple project for fetching and showing the latest **BTC** prices
 
-💢 User could see the hourly Market volume of bitcoin during 10 hours ago at the a single bar chart
 
-💢 User could filter the lower, average and highr price
+### In this project:
+
+💢 User can see the hourly lower, average and higher price of bitcoin during 10 hours ago
+
+💢 User can see the hourly Market volume of bitcoin during 10 hours ago at the a single bar chart
+
+💢 User can filter the lower, average and highr price
 
 💢 Show Maximum & Minimum volume reange of **BTC** to User
 
